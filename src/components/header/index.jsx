@@ -1,34 +1,48 @@
 import "./style.scss";
 import tela_show_logo_horz from "../../assets/logos/tela_show_logo_horz.png";
-import blue_telephone_icon from "../../assets/icons/blue_telephone_icon.svg";
 
 export function Header(props) {
 
   const {OpenMobileMenu} = props;
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <header className="Header">
-      <img className="Header__logo" alt="logo tela show rede de proteção" src={tela_show_logo_horz}/>
-      <nav className="Header__nav">
-        <ul>
-          <li>Início</li>
-          <li>Serviços</li>
-          <li>Locais de Atuação</li>
-          <li>Solicitar Orçamento</li>
-        </ul>
-      </nav>
+    <>
+      <header className="header">
+        <img className="header__logo" alt="logo tela show rede de proteção" src={tela_show_logo_horz} onClick={scrollToTop}/>
+        <nav className="header__nav">
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#locais">Locais de Atuação</a></li>
+            <li><a href="#orcamento">Solicitar Orçamento</a></li>
+          </ul>
+        </nav>
 
-      <div className="Header__contact">
-        <img src={blue_telephone_icon} alt="ícone de telefone azul" className="Header__contact_img" />
-        <div className="Header__contact_texts">
-          <p className="Header__contact_texts_description">Entre em contato:</p>
-          <p className="Header__contact_texts_phone">(21)97211-1011</p>
+        <div className="header__contact">
+          <svg className="header__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1018 1018.12" width="25px" height="25px">
+            <path d="M224.68,0c12.82,4.98,19.91,15.73,26.18,26.91,17.48,31.14,34.58,62.5,51.86,93.76,15.52,28.08,30.73,56.35,49.61,82.42,1.55,2.14,2.92,4.41,4.34,6.65,19.43,30.46,17.91,44.71-6.72,71.27-22.21,23.95-49.47,41.93-73.81,63.35-10.69,9.4-21.25,18.94-29.74,30.54-7.03,9.59-8.89,19.7-4.43,30.83,2.46,6.13,4.33,12.59,7.49,18.33,51.8,94.03,112.27,181.11,197.46,248.76,41.11,32.65,85.5,60.07,130.7,86.42,9.72,5.67,19.56,10.93,29.95,15.38,15.18,6.49,28.17,4.02,40.34-6.63,16.54-14.47,30.74-31.05,44.09-48.38,14.77-19.18,29.99-37.94,48.04-54.19,23.84-21.45,38.55-23.81,64.77-6.01,55.71,37.83,115.73,67.98,174.35,100.64,6.93,3.86,13.63,8.15,20.32,12.41,8.14,5.18,14.95,11.61,18.52,20.88v31.81c-2.84,21.6-7.56,42.71-13.95,63.59-7.05,23.01-19.95,41.73-38.35,56.6-20.67,16.71-42.66,30.9-65.96,42.53,0,0-36.57,18.28-67.34,25.55-16.98,4.01-32.29,4.57-33.11,4.59-4.15.13-7.59.08-9.94,0h-31.81c-3.65.11-9.18.21-15.91,0-51.33-1.57-85.82-20.96-140.51-40.76-32.7-11.84-65.02-24.49-96.32-39.87-45.77-22.48-87.3-51.3-127.48-82.31-50.99-39.34-97.59-83.57-141.82-130.18-53.46-56.33-102.27-116.47-140.51-184.44-14.78-26.27-28.15-53.33-38.58-81.69-14.85-40.4-30.95-80.34-43.79-121.47-6.22-19.92-10.33-40.21-12.62-60.91v-57.66c4.72-58.71,31.24-108.35,64.06-155.56,21.44-30.83,51.13-47.8,87.08-55.84,13.83-3.09,27.8-4.99,41.72-7.31h31.81Z" fill="#0d75b8"/>
+          </svg>
+          <div className="header__contact_texts">
+            <p className="header__contact_texts_description">Entre em contato:</p>
+            <p className="header__contact_texts_phone">(21)97211-1011</p>
+          </div>
         </div>
-      </div>
 
-      <button className="Header__openMobileMenu">
-        <img src="" alt="abrir menu" onClick={OpenMobileMenu}/>
-      </button>
-    </header>
+        <button className="header__openMobileMenu" onClick={OpenMobileMenu}>
+          <svg id="hamburguer-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.85 277.49" width="29px" height="21px">
+            <path d="M0,257.2c2.73-5.48,6.06-10.33,12.67-11.5,1.58-.28,3.22-.42,4.83-.42,116.25-.02,232.5,0,348.74-.06,9.13,0,14.63,4.49,17.62,12.73v6.75c-3.43,9.59-10.43,12.77-20.33,12.76-113.81-.16-227.63-.18-341.44.03-10.04.02-17.87-2.22-22.08-12.04v-8.25Z" fill="#0d75b8"/>
+            <path d="M383.85,19.5c-3.49,9.54-10.48,12.69-20.38,12.68-114.36-.17-228.73-.17-343.09,0-9.88.01-16.9-3.11-20.38-12.68v-7.5C1.49,5.06,5.68,1.01,12.75,0h358.36c7.4,1.1,11.65,5.34,12.75,12.75v6.75Z" fill="#0d75b8"/>
+            <path d="M383.85,142.47c-1.66,2.58-2.55,5.62-4.97,7.74-3.13,2.75-6.64,4.35-10.85,4.34-8.37-.01-16.74,0-25.1,0-107.41,0-214.83-.09-322.24.15-9.92.02-16.91-2.87-20.69-12.24v-7.5c1.57-2.78,2.59-5.89,5.15-8.07,2.63-2.25,5.53-3.82,9.04-4.06,1.49-.1,2.99-.16,4.49-.16,115.49,0,230.97,0,346.46-.05,6.21,0,11.57,1.32,15.56,6.46,1.56,2.01,2.03,4.46,3.15,6.63v6.75Z" fill="#0d75b8"/>
+          </svg>
+        </button>
+      </header>
+    </>
   );
 }

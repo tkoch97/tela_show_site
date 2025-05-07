@@ -1,0 +1,40 @@
+// _color-palete
+
+// Grayscale
+$white: #FFFFFF; // Branco puro
+$black: #000000; // Preto puro
+$gray-100: #F8F8F8; // Cinza bem claro
+$gray-200: #E5E5E5; // Cinza claro neutro
+$gray-300: #C4C4C4; // Cinza médio claro
+$gray-400: #B3B3B3; // Cinza médio escuro
+$gray-900: #6C3C00; // Marrom escuro (quase bronze)
+
+// Green tones
+$green-400: #5BDE72; // Verde claro vibrante
+$green-500: #2CC247; // Verde principal
+
+// Yellow tone
+$yellow-400: #D6CF66; // Amarelo pastel suave (tela cor areia)
+
+// Blue tones
+$blue-500: #0D75B9; // Azul forte
+$blue-300: #47AEF2; // Azul claro
+
+//break-points
+
+$DEVICE_BREAKPOINTS: (
+  // Smartphones pequenos (iPhone SE, Galaxy J)
+  XS: 320px,
+  // Smartphones médios (iPhone XR, Androids padrão)
+  SM: 425px,
+  // Tablets (iPad Mini, Galaxy Tab)
+  MD: 768px,
+  // Tablets grandes / híbridos
+  LG: 912px,
+  // Laptops padrão
+  XL: 1024px,
+  // Desktops HD
+  XXL: 1280px,
+  // Telas grandes ou monitores ultrawide
+  XXXL: 1440px
+);
